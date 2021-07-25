@@ -1,0 +1,25 @@
+language: node_js
+cache:
+  directories: 
+    - node_modules
+    - ~/.npm
+node_js:
+  - '16'
+git:
+  depth: 3
+script:
+  - yarn test
+notifications:
+  email: 
+    recipients:
+      - jesusrivero19@gmail.com
+      on_success: true
+      on_failure: true
+deploy:
+  provide: heroku
+  skip-cleanup: true
+  keep-history: true
+  api_key: ccc33acd-33bc-4f75-896b-38315240f602
+  app: pl-str-backend
+  on:
+    repo: RiveroMadera/platzi-store-backend
